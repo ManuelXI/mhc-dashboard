@@ -6,3 +6,11 @@ export interface MenuItem {
   children?: MenuItem[];
   iconLink?: string;
 }
+
+export interface UserMetric {
+  title: string;
+  amount: string;
+  improvement: string;
+  timePeriod: string;
+  iconLink: string;
+}

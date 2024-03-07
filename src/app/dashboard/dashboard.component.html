@@ -1,1 +1,53 @@
-<p>dashboard works!</p>
+<section class="dashboard-wrapper">
+    <div class="header">
+        <div class="heading-h3">
+            Dashboard
+        </div>
+        <button class="button-medium">
+            Create Report
+        </button>
+    </div>
+
+    <div class="general-metrics-countdown-wrapper">
+        <ng-container *ngFor="let item of userMetrics">
+            <div class="user-metric">
+                <span class="icon"><img [src]="item.iconLink" alt=""></span>
+                <div class="right-items">
+                    <span class="paragraph-small-text">{{item.title}}</span>
+                    <div class="amount-and-improvement">
+                        <span class="heading-h4">{{item.amount}}</span>
+                        <span class="paragraph-small-text | improvement">{{item.improvement}}</span>
+                    </div>
+                    <span class="paragraph-small-text-regular">{{item.timePeriod}}</span>
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="corporative-event">
+            <div class="title | paragraph-small-text">
+                Next Corporative Event
+            </div>
+            <div class="timestamps">
+                <span class="timestamp">
+                    <span class="heading-h4">02</span>
+                    <span class="paragraph-small-text">Months</span>
+                </span>
+                <span class="timestamp">
+                    <span class="heading-h4">03</span>
+                    <span class="paragraph-small-text">Weeks</span>
+                </span>
+                <span class="timestamp">
+                    <span class="heading-h4">21</span>
+                    <span class="paragraph-small-text">Days</span>
+                </span>
+                <span class="timestamp">
+                    <span class="heading-h4">23</span>
+                    <span class="paragraph-small-text">Hours</span>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+
+</section>

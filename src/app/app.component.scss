@@ -1,5 +1,9 @@
-main {
+:host {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 45px;
+  // gap: 45px;
+
+  .content {
+    overflow: auto;
+  }
 }

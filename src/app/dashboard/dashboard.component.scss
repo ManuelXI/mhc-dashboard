@@ -1,0 +1,84 @@
+.dashboard-wrapper {
+    --width: 1104px;
+    --padding-right: 40px;
+    --padding-top: 32px;
+    --padding-left: 45px;
+    // display: block;
+    width: calc(var(--width) + var(--padding-right));
+    height: 100%;
+    overflow-y: auto;
+    outline: 1px solid saddlebrown;
+    padding-right: var(--padding-right);
+    padding-top: var(--padding-top);
+    padding-left: var(--padding-left);
+    background: var(--clr-base-white);
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .general-metrics-countdown-wrapper {
+        display: flex;
+        gap: 20px;
+
+        .corporative-event {
+            box-shadow: var(--container-drop-shadow);
+            border-radius: var(--container-border-radius);
+            padding: 20px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .title {
+                width: 100%;
+                color: var(--clr-brand-primary-110);
+                text-align: left;
+            }
+
+            .timestamps {
+                display: flex;
+                gap: 16px;
+
+                .timestamp {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                }
+            }
+        }
+
+        .user-metric {
+            box-shadow: var(--container-drop-shadow);
+            border-radius: var(--container-border-radius);
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            justify-content: center;
+
+            .right-items {
+                display: flex;
+                flex-direction: column;
+                // gap: 5px;
+
+                .amount-and-improvement {
+                    display: flex;
+                    gap: 5px;
+                    align-items: baseline;
+
+                    .improvement {
+                        color: var(--clr-system-success-reg);
+                    }
+                }
+            }
+
+        }
+    }
+}

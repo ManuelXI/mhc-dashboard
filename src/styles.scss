@@ -16,12 +16,29 @@
 
   --clr-base-white: #ffffff;
   --clr-text-medium: #34405e;
+
+  --clr-brand-primary-110: #0085C8;
+
   --clr-brand-secondary: #fafaff;
   --clr-brand-secondary-5: #fafaff;
   --clr-brand-secondary-30: #e6e8f3;
   --clr-brand-secondary-60: #abb4ec;
   --clr-system-error-reg: #e74c3c;
-  --clr-text-light: #6E768D;
+  --clr-system-success-reg: #24AE5F;
+  --clr-text-light: #6e768d;
+  --clr-text-dark: #0e1339;
+  --clr-linear-hover: #18a7d9;
+
+  --clr-brand-primary-gradient: linear-gradient(
+    to right,
+    rgba(0, 172, 233, 1),
+    rgba(0, 149, 233, 1)
+  );
+  --clr-brand-primary-gradient-hover: linear-gradient(
+    to right,
+    #18a7d9,
+    #18a7d9
+  );
 
   --ff-primary: "Poppins", sans-serif;
 
@@ -59,7 +76,14 @@
   --size-800: 4rem;
   --size-900: 5rem;
 
+  --container-border-radius: 16px;
+
   --side-panel-drop-shadow: 4px 2px 16px rgba(41, 54, 136, 0.06);
+  --container-drop-shadow: 0px 2px 10px -2px rgba(0, 100, 167, 0.1);
+
+  --reg-transition: all 250ms ease-in-out;
+  --medium-transition: all 600ms ease-in-out;
+  --slow-transition: all 800ms ease-in-out;
 }
 
 @media (min-width: 47em) {
@@ -191,6 +215,44 @@ body {
 
 .paragraph-small-text {
   font-size: 12px;
-  color: var(--clr-text-medium);
+  color: var(--clr-text-light);
   font-weight: var(--fw-medium);
+}
+
+.paragraph-small-text-regular {
+  font-size: 12px;
+  color: var(--clr-text-medium);
+  font-weight: var(--fw-regular);
+}
+
+.heading-h3 {
+  font-size: 32px;
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-text-dark);
+}
+
+.heading-h4 {
+  font-size: 24px;
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-text-dark);
+}
+
+.button-medium {
+  color: var(--clr-base-white);
+  font-size: 14px;
+  background-image: var(--clr-brand-primary-gradient);
+  padding-inline: 32px;
+  padding-block: 16px;
+  border-radius: 4px;
+  letter-spacing: 0.8px;
+  font-weight: var(--fw-semi-bold);
+  border: none;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--medium-transition);
+
+  &:hover {
+    background: var(--clr-brand-primary-gradient-hover);
+  }
 }
