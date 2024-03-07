@@ -17,7 +17,11 @@
   --clr-base-white: #ffffff;
   --clr-text-medium: #34405e;
   --clr-brand-secondary: #fafaff;
+  --clr-brand-secondary-5: #fafaff;
+  --clr-brand-secondary-30: #e6e8f3;
   --clr-brand-secondary-60: #abb4ec;
+  --clr-system-error-reg: #e74c3c;
+  --clr-text-light: #6E768D;
 
   --ff-primary: "Poppins", sans-serif;
 
@@ -153,6 +157,20 @@ body {
   background-color: var(--clr-base-white);
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 4px;
+  position: fixed;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-brand-secondary-30);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--clr-base-white);
+}
+
 .heading-regular {
   color: var(--clr-text-medium);
   font-weight: var(--fw-medium);
@@ -163,4 +181,16 @@ body {
   color: var(--clr-brand-secondary-60);
   font-weight: var(--fw-semi-bold);
   letter-spacing: 0.8px;
+}
+
+.paragraph-body {
+  font-size: 14px;
+  color: var(--clr-text-medium);
+  font-weight: var(--fw-medium);
+}
+
+.paragraph-small-text {
+  font-size: 12px;
+  color: var(--clr-text-medium);
+  font-weight: var(--fw-medium);
 }

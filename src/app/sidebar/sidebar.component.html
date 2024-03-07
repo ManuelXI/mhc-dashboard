@@ -1,1 +1,116 @@
-<p>sidebar works!</p>
+<div class="navigation-wrapper">
+    <div class="logo-wrapper">
+        <img src="assets/Logo.svg" alt="icon">
+    </div>
+    <div class="main-nav-links">
+
+        <ng-container *ngFor="let item of menuItems">
+            <ng-container [ngSwitch]="item.type">
+                <!-- Page type -->
+                <ng-container *ngSwitchCase="'page'">
+                    <ng-template [ngTemplateOutlet]="pageTemplate"
+                        [ngTemplateOutletContext]="{ $implicit: item }"></ng-template>
+                </ng-container>
+
+                <!-- Group type -->
+                <ng-container *ngSwitchCase="'group'">
+                    <h2 class="nav-header">{{ item.title }}</h2>
+                    <ng-container *ngFor="let child of item.children">
+                        <ng-container [ngSwitch]="child.type">
+                            <ng-container *ngSwitchCase="'page'">
+                                <ng-template [ngTemplateOutlet]="pageTemplate"
+                                    [ngTemplateOutletContext]="{ $implicit: child }"></ng-template>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'collapsible'">
+                                <ng-template [ngTemplateOutlet]="collapsibleTemplate"
+                                    [ngTemplateOutletContext]="{ $implicit: child }"></ng-template>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+
+                <!-- Collapsible type -->
+                <ng-container *ngSwitchCase="'collapsible'">
+                    <ng-template [ngTemplateOutlet]="collapsibleTemplate"
+                        [ngTemplateOutletContext]="{ $implicit: item }"></ng-template>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+
+        <ng-template #pageTemplate let-item>
+            <a [routerLink]="item.route" class="regular-navlink">
+                <span class="icon-wrapper">
+                    <img [src]="
+                    'assets/side-panel/' + item.iconLink
+                  " alt="icon">
+                </span>
+                <span>
+                    {{ item.title }}
+                </span>
+            </a>
+
+        </ng-template>
+
+        <ng-template #collapsibleTemplate let-item>
+            <span class="collapsible-navlink" (click)="item.collapsed = !item.collapsed">
+                <span>
+                    <span class="icon-wrapper">
+                        <img [src]="
+                        'assets/side-panel/' + item.iconLink
+                      " alt="icon">
+                    </span>
+                    <span>
+                        {{ item.title }}
+                    </span>
+                </span>
+                <span>
+                    <img src="assets/side-panel/arrow-right.svg" alt="icon">
+                </span>
+            </span>
+            <div *ngIf="!item.collapsed">
+                <ng-container *ngFor="let child of item.children">
+                    <a [routerLink]="child.route">{{ child.title }}</a>
+                </ng-container>
+            </div>
+        </ng-template>
+
+
+
+    </div>
+    <div class="footer-nav-links">
+        <a routerLink="" class="regular-navlink">
+            <span>
+                <img src="assets/side-panel/help.svg" alt="icon">
+            </span>
+            Help</a>
+        <a routerLink="" class="regular-navlink">
+            <div class="notification-bell">
+                <img src="assets/side-panel/notis.svg" alt="icon">
+                <span class="notification-count">
+                    12
+                </span>
+            </div>
+            Notifications
+        </a>
+
+        <a routerLink="" class="user-info-link">
+            <span class="user-details-wrapper">
+                <span class="avatar-wrapper">
+                    <img src="assets/side-panel/avatar.svg" alt="icon">
+                </span>
+                <span class="user-details">
+                    <span class="paragraph-body">
+                        Theodora Bouvet
+                    </span>
+                    <span class="user-role paragraph-small-text">
+                        Admin
+                    </span>
+                </span>
+            </span>
+            <span class="options-icon">
+                <img src="assets/side-panel/options.svg" alt="icon">
+            </span>
+        </a>
+    </div>
+
+</div>
