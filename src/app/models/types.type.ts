@@ -14,3 +14,8 @@ export interface UserMetric {
   timePeriod: string;
   iconLink: string;
 }
+
+export interface UserData {
+  status: string;
+  amount: number;
+}

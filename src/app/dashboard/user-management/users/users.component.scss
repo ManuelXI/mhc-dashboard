@@ -1,0 +1,38 @@
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  .status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .total-amount {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 18px;
+        padding-bottom: 10px;
+    }
+
+    .status-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        .status {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+    }
+
+    .status-circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<h5 class="heading-h4 | mb-10">
+    Users
+</h5>
+<div class="chart-wrapper">
+    <ag-charts-angular style="height: 100%;" [options]="options"></ag-charts-angular>
+
+    <div class="status-list">
+        <div class="total-amount | heading-h5">Total <span>{{ getTotalAmount() | amountFormat }}</span></div>
+        <div class="status-item" *ngFor="let item of getData()">
+            <div class="status">
+                <div class="status-circle" [style.background-color]="getStatusColor(item.status)"></div>
+                <div class="paragraph-body paragraph-body-light">{{item.status}}</div>
+            </div>
+            <div class="amount heading-h6-regular">{{item.amount | amountFormat}}</div>
+        </div>
+    </div>
+</div>
