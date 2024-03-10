@@ -1,0 +1,71 @@
+:host {
+    box-shadow: none !important;
+}
+
+.revenue-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-items: space-between;
+    height: 100%;
+    gap: 24px;
+
+    .revenue-card {
+        --primary-color: #6E9F64;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        border-radius: 16px;
+        border: 1px solid var(--primary-color);
+        padding: 24px;
+        
+        &.negative {
+            --primary-color: #C6372E;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+            .percentage {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                
+                .percentage-text {
+                    font-size: 18px;
+                    color: var(--primary-color);
+                    font-weight: var(--fw-regular);
+                } 
+            }
+        }
+
+        .amounts-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            position: relative;
+            
+            .divider {
+                height: 50px;
+                width: 1px;
+                background-color: var(--clr-divider-light);
+            }
+
+            .amount {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+
+                &:first-of-type {
+                    text-align: right;
+                }
+            }
+
+
+        }
+
+
+    }
+}

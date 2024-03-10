@@ -343,6 +343,10 @@ body {
       border-radius: 16px;
       padding: 30px;
     }
+
+    &.one-to-half {
+      grid-template-columns: 1fr 0.5fr;
+    }
   }
 }
 

@@ -1,1 +1,44 @@
-<p>revenue-and-expences works!</p>
+<div class="revenue-card-wrapper | flex f-column f-space-between">
+    <ng-container *ngFor="let item of revenues" >
+        <div class="revenue-card revenue"
+        [ngClass]="{
+            'negative': item.percentage < 0,
+            'positive': item.percentage >= 0
+          }"
+        >
+            <span class="header">
+                <span class="title | heading-h4">
+                    {{item.type}}
+                </span>
+                <span class="percentage" >
+                    <span>
+                        <ng-container *ngIf="item.percentage < 0" >
+                            <img src="assets/icons/downArrow.svg" alt="Down Icon">
+                        </ng-container>
+                        <ng-container *ngIf="item.percentage >= 0" >
+                            <img src="assets/icons/upArrow.svg" alt="Up Icon">
+                        </ng-container>
+                    </span>
+                    <span class="percentage-text" >
+                        {{item.percentage}}%
+                    </span>
+                </span>
+            </span>
+            <div class="amounts-wrapper">
+                <span class="amount" >
+                    <span class="heading-h4-header">
+                        ${{item.lastMonthAMount | amountFormat:2}}
+                    </span>
+                    <span class="paragraph-small-text">Last Month</span>
+                </span>
+                <div class="divider"></div>
+                <span class="amount" >
+                    <span class="heading-h4-header" >
+                        ${{item.thisMonthAMount | amountFormat:2}}
+                    </span>
+                    <span class="paragraph-small-text">Last Month</span>
+                </span>
+            </div>
+        </div>
+    </ng-container>
+</div>

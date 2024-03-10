@@ -29,3 +29,9 @@ export interface TableData {
   amount: number;
   imageUrl?: string;
 }
+export interface Revenue {
+  type: 'Revenue' | 'Expences';
+  percentage: number;
+  lastMonthAMount: number;
+  thisMonthAMount: number;
+}
