@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './donations.component.scss'
 })
 export class DonationsComponent {
-
+  amount: number = 1200;
 }
