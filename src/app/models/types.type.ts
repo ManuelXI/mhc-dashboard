@@ -24,3 +24,7 @@ export interface Data {
   amount: number;
   color: string;
 }
+export interface TableData {
+  name: string;
+  amount: number;
+}
