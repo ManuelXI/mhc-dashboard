@@ -13,6 +13,13 @@ import { DemographyComponent } from './dashboard/user-management/demography/demo
 import { AgChartsAngular } from 'ag-charts-angular';
 import { AmountFormatPipe } from './pipes/amount-format.pipe';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { BookingsComponent } from './dashboard/bookings/bookings.component';
+import { ActiveEntitiesComponent } from './dashboard/bookings/active-entities/active-entities.component';
+import { TopBookingsComponent } from './dashboard/bookings/top-bookings/top-bookings.component';
+import { TopSportsComponent } from './dashboard/bookings/top-sports/top-sports.component';
+import { TopSportsPlacesComponent } from './dashboard/bookings/top-sports-places/top-sports-places.component';
+import { TopProsComponent } from './dashboard/bookings/top-pros/top-pros.component';
+import { BookingsOverPeriodsComponent } from './dashboard/bookings/bookings-over-periods/bookings-over-periods.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +31,14 @@ import { HighchartsChartModule } from 'highcharts-angular';
     UsersLocationsComponent,
     RegisteredUsersComponent,
     DemographyComponent,
-    AmountFormatPipe
+    AmountFormatPipe,
+    BookingsComponent,
+    ActiveEntitiesComponent,
+    TopBookingsComponent,
+    TopSportsComponent,
+    TopSportsPlacesComponent,
+    TopProsComponent,
+    BookingsOverPeriodsComponent
   ],
   imports: [
     BrowserModule,
