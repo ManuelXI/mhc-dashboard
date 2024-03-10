@@ -1,1 +1,34 @@
-<p>top-income works!</p>
+<div class="header | flex f-space-between f-align-center mb-25">
+    <h5 class="heading-h4">
+        Top Income
+    </h5>
+    <span>
+        <!-- //TODO Add Filters -->
+    </span>
+</div>
+<div class="table-wrapper">
+    <div class="table-header | flex f-space-between f-align-center mb-20">
+        <span class="paragraph-body-regular-light">
+            <!-- //TODO Add Filter -->
+            Professionals
+        </span>
+        <span class="paragraph-body-regular-light">
+            <!-- //TODO Add Filter -->
+            Income
+        </span>
+    </div>
+    <div class="dash-separated-table | flex  f-gap f-column" style="--gap-spacer: 15px">
+        <div *ngFor="let item of items; index as i" class="item-row">
+            <span class="item-name | paragraph-body flex f-align-center">{{i + 1}}.
+                <ng-container *ngIf="item.imageUrl">
+                    <span class="item-image">
+                        <img [src]="item.imageUrl" alt="Picture of Pro">
+                    </span>
+                </ng-container>
+                <span class="paragraph-body-primary">{{ item.name }}</span>
+            </span>
+            <span class="item-dashes"></span>
+            <span class="item-number | paragraph-body">{{ item.amount | currency:'USD':'symbol' }}</span>
+        </div>
+    </div>
+</div>
