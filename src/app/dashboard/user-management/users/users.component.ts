@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
-import { AgChartsAngular } from 'ag-charts-angular';
-import {
-  AgChartOptions,
-  AgCharts,
-  AgChartTheme,
-  AgPieSeriesFormat,
-} from 'ag-charts-community';
-import { get } from 'lodash';
-import { UserData } from '../../../models/types.type';
+import { Data, UserData } from '../../../models/types.type';
+import Highcharts from 'highcharts';
 
 @Component({
   selector: 'app-users',
@@ -15,71 +8,86 @@ import { UserData } from '../../../models/types.type';
   styleUrl: './users.component.scss',
 })
 export class UsersComponent {
-  public options!: AgChartOptions;
-  statusColors: { [key: string]: string } = {
-    'Active Now': 'violet',
-    Pending: 'green',
-    Reported: 'red',
-    Invited: 'blue',
-    Suspended: 'orange',
-    Banned: 'gray',
-  };
-  userData: UserData[] = []; 
-  
-  myTheme: AgChartTheme = {
-    baseTheme: 'ag-default',
-  };
-  
-  constructor() {
-  }
-  
-  ngOnInit() {
-    this.userData = this.getData();
-    this.options = {
-      data: this.userData,
-      theme: this.myTheme,
-      series: [
-        {
-          type: 'pie',
-          angleKey: 'amount',
-          formatter: this.formatter.bind(this),
-          // legendItemKey: "status",
+  highcharts = Highcharts;
+  pieChartData: Data[] = [
+    { name: 'Active Now', amount: 800000, color: '#00ACE9' },
+    { name: 'Pending', amount: 115000, color: '#DEE049' },
+    { name: 'Reported', amount: 101000, color: '#DD8B3B' },
+    { name: 'Invited', amount: 115000, color: '#7AA5D9' },
+    { name: 'Suspended', amount: 40000, color: '#B75FDC' },
+    { name: 'Banned', amount: 20000, color: '#C6372E' },
+  ];
+  pieChartOptions: Highcharts.Options = {
+    chart: {
+      plotShadow: false,
+    },
+    title: {
+      text: undefined,
+    },
+    tooltip: {
+      pointFormat: '<b>{point.percentage:.1f}%</b>',
+    },
+    plotOptions: {
+      pie: {
+        shadow: false,
+        size: '100%',
+        dataLabels: {
+          enabled: false,
         },
-      ],
-    };
-  }
+      },
+    },
+    series: [
+      {
+        type: 'pie',
+        data: [
+          {
+            name: 'Active Now',
+            y: 800000 / 1191000,
+            color: '#00ACE9',
+          },
+          {
+            name: 'Pending',
+            y: 115000 / 1191000,
+            color: '#DEE049',
+          },
+          {
+            name: 'Reported',
+            y: 101000 / 1191000,
+            color: '#DD8B3B',
+          },
+          {
+            name: 'Invited',
+            y: 115000 / 1191000,
+            color: '#7AA5D9',
+          },
+          {
+            name: 'Suspended',
+            y: 40000 / 1191000,
+            color: '#B75FDC',
+          },
+          {
+            name: 'Banned',
+            y: 20000 / 1191000,
+            color: '#C6372E',
+          },
+        ],
+      },
+    ],
+    credits: {
+      enabled: false,
+    },
+  };
 
-  formatter(params: any): AgPieSeriesFormat {
-    const status = get(params, 'datum.status');    
-    const fill = get(this.statusColors, status, 'black');
-    return {
-      fill,
-    };
-  }
+  userData: UserData[] = [];
 
   getTotalAmount(): number {
     let totalAmount = 0;
-    const data = this.userData;
+    const data = this.pieChartData;
 
     for (const item of data) {
       totalAmount += item.amount;
     }
 
     return totalAmount;
-  }
-
-  getData(): UserData[] {
-    return [
-      { status: 'Active Now', amount: 800000 },
-      { status: 'Pending', amount: 115000 },
-      { status: 'Reported', amount: 101000 },
-      { status: 'Invited', amount: 115000 },
-      { status: 'Suspended', amount: 40000 },
-      { status: 'Banned', amount: 20000 },
-    ];
-  }
-
-  getStatusColor(status: string): string {
-    return this.statusColors[status] || 'black';
   }
 }

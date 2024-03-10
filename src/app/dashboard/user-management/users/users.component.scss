@@ -26,6 +26,10 @@
           display: flex;
           gap: 10px;
           align-items: center;
+
+          .paragraph-body-light {
+            text-wrap: nowrap;
+          }
         }
     }
 
