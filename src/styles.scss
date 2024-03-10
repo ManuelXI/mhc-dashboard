@@ -315,3 +315,20 @@ body {
     }
   }
 }
+
+.flex {
+  display: flex;
+}
+
+.f-space-between {
+  justify-content: space-between;
+}
+
+.f-align-center {
+  align-items: center;
+}
+
+.f-gap {
+  --gap-spacer: 10px;
+  gap: var(--gap-spacer);
+}

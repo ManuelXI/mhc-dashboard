@@ -19,3 +19,8 @@ export interface UserData {
   status: string;
   amount: number;
 }
+export interface Data {
+  name: string;
+  amount: number;
+  color: string;
+}
