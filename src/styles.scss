@@ -295,6 +295,9 @@ body {
   color: var(--clr-text-dark);
 }
 
+.mb-5 {
+  margin-bottom: 5px;
+}
 .mb-10 {
   margin-bottom: 10px;
 }
@@ -338,7 +341,7 @@ body {
     gap: 24px;
 
     & > * {
-      outline: 1px solid salmon;
+      // outline: 1px solid salmon;
       box-shadow: var(--container-drop-shadow);
       border-radius: 16px;
       padding: 30px;
