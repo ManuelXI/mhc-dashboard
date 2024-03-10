@@ -25,6 +25,9 @@ import { TopIncomeComponent } from './dashboard/finances/top-income/top-income.c
 import { RevenueAndExpencesComponent } from './dashboard/finances/revenue-and-expences/revenue-and-expences.component';
 import { DonationsComponent } from './dashboard/finances/donations/donations.component';
 import { CashflowComponent } from './dashboard/finances/cashflow/cashflow.component';
+import { TrafficComponent } from './dashboard/traffic/traffic.component';
+import { TrafficChartComponent } from './dashboard/traffic/traffic-chart/traffic-chart.component';
+import { ActiveVisitorsComponent } from './dashboard/traffic/active-visitors/active-visitors.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { CashflowComponent } from './dashboard/finances/cashflow/cashflow.compon
     TopIncomeComponent,
     RevenueAndExpencesComponent,
     DonationsComponent,
-    CashflowComponent
+    CashflowComponent,
+    TrafficComponent,
+    TrafficChartComponent,
+    ActiveVisitorsComponent
   ],
   imports: [
     BrowserModule,
