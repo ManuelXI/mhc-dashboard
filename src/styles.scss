@@ -26,6 +26,7 @@
   --clr-system-error-reg: #e74c3c;
   --clr-system-success-reg: #24AE5F;
   --clr-text-light: #6e768d;
+  --clr-text-disabled: #AEB2BF;
   --clr-text-dark: #0e1339;
   --clr-linear-hover: #18a7d9;
 
@@ -253,6 +254,18 @@ body {
 }
 
 .heading-h6-regular {
+  font-size: 16px;
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-text-dark);
+}
+
+.heading-h6-regular-light {
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  color: var(--clr-text-light);
+}
+
+.heading-h6 {
   font-size: 16px;
   font-weight: var(--fw-semi-bold);
   color: var(--clr-text-dark);

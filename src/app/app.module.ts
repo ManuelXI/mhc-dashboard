@@ -12,6 +12,7 @@ import { RegisteredUsersComponent } from './dashboard/user-management/registered
 import { DemographyComponent } from './dashboard/user-management/demography/demography.component';
 import { AgChartsAngular } from 'ag-charts-angular';
 import { AmountFormatPipe } from './pipes/amount-format.pipe';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AmountFormatPipe } from './pipes/amount-format.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AgChartsAngular
+    AgChartsAngular,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

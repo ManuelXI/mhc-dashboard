@@ -1,1 +1,29 @@
-<p>demography works!</p>
+<div class="header | mb-10">
+    <h5 class="heading-h4">
+        Demography
+    </h5>
+    <span class="selector-wrapper">
+        <button (click)="toggleChart('gender')" [class.active]="showGenderChart">Gender</button>
+        <button (click)="toggleChart('age')" [class.active]="!showGenderChart">Age</button>
+    </span>
+</div>
+<div class="charts-wrapper">
+    <div *ngIf="showGenderChart">
+        <highcharts-chart [Highcharts]="highcharts" [options]="doughnutChartOptions"
+            style="width: 100%; height: 100%; display: block;">
+        </highcharts-chart>
+        <div *ngIf="doughnutChartData" class="doughnut-chart-legend">
+            <div *ngFor="let item of doughnutChartData">
+                <span [style.color]="item.color" style="margin-right: 10px;">&#x25CF;</span>
+                <span class="heading-h6-regular-light">{{ item.name }}: <span class="heading-h6"> {{ item.y
+                        }}%</span></span>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!showGenderChart">
+        <highcharts-chart [Highcharts]="highcharts" [options]="barChartOptions"
+            style="width: 100%; height: 100%; display: block;">
+        </highcharts-chart>
+    </div>
+</div>

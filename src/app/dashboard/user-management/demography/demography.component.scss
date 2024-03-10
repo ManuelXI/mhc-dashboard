@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .selector-wrapper {
+        display: flex;
+        gap: 12px;
+        border-bottom: 2px solid #f4f5fb;
+
+
+        button {
+            background: none;
+            border: none;
+            color: var(--clr-text-disabled);
+            font-size: 14px;
+            color: var(--clr-text-medium);
+            font-weight: var(--fw-medium);
+            cursor: pointer;
+
+            &.active {
+                border-bottom: 2px solid var(--clr-brand-primary-110);
+            }
+        }
+    }
+
+}
+.doughnut-chart-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    .heading-h6 {
+        margin-left: 10px;
+    }
+}
