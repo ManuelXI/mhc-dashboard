@@ -223,10 +223,23 @@ body {
   font-weight: var(--fw-medium);
 }
 
+.paragraph-small-text-for-chart > * {
+  font-size: 12px !important;
+  color: var(--clr-text-light) !important;
+  font-weight: var(--fw-medium) !important;
+  font-family: var(--ff-body);
+}
+
 .paragraph-small-text-regular {
   font-size: 12px;
   color: var(--clr-text-medium);
   font-weight: var(--fw-regular);
+}
+.paragraph-small-text-regular-for-chart > * {
+  font-family: var(--ff-body);
+  font-size: 12px !important;
+  color: var(--clr-text-medium) !important;
+  font-weight: var(--fw-regular) !important;
 }
 
 .heading-h3 {

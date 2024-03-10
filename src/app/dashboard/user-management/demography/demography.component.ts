@@ -9,7 +9,7 @@ import { get } from 'lodash';
 })
 export class DemographyComponent {
   highcharts = Highcharts;
-  showGenderChart: boolean = false;
+  showGenderChart: boolean = true;
   doughnutChartOptions: Highcharts.Options = {
     chart: {
       plotShadow: false,
@@ -59,14 +59,14 @@ export class DemographyComponent {
       text: undefined,
     },
     xAxis: {
-      className: 'paragraph-small-text',
+      className: 'paragraph-small-text-for-chart',
       categories: ["55+", "45-54", "35-44", "25-34", "18-24", "14-18"],
       title: {
         text: null,
       },
     },
     yAxis: {
-      className: 'paragraph-small-text-regular',
+      className: 'paragraph-small-text-regular-for-chart',
       min: 0,
       title: {
         text: '%',
