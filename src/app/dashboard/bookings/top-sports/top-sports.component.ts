@@ -33,7 +33,7 @@ export class TopSportsComponent {
       },
       max: 10000,
       lineColor: '#E6E8F3', // Set the color of the y-axis line here
-      lineWidth: 1
+      // lineWidth: 0
     },    
     tooltip: {
       valueSuffix: '%',

@@ -1,1 +1,16 @@
-<p>bookings-over-periods works!</p>
+<div class="header flex f-space-between f-align-center mb-5">
+    <h5 class="heading-h4">
+       Bookings
+    </h5>
+    <span>
+       <!-- TODO: Add Filter -->
+    </span>
+ 
+ </div>
+ <div>
+    <highcharts-chart
+       [Highcharts] = "highcharts" 
+       [options] = "chartOptions" 
+       style = "width: 100%; height: 220px; display: block;">
+    </highcharts-chart>
+ </div>
