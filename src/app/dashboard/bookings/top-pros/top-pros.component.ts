@@ -11,7 +11,7 @@ export class TopProsComponent {
     {
       name: 'Raymond Richards',
       amount: 2500,
-      imageUrl: 'assets/dashboard/Top Professionals/Albert Flores.svg',
+      imageUrl: 'assets/dashboard/Top Professionals/Raymond Richards.svg',
     },
     {
       name: 'Arlene McCoy',
