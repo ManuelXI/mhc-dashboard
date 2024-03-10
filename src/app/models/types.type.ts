@@ -27,4 +27,5 @@ export interface Data {
 export interface TableData {
   name: string;
   amount: number;
+  imageUrl?: string;
 }

@@ -219,6 +219,11 @@ body {
   color: var(--clr-text-light);
   font-weight: var(--fw-medium);
 }
+.paragraph-body-regular-light {
+  font-size: 14px;
+  color: var(--clr-text-light);
+  font-weight: var(--fw-regular);
+}
 .paragraph-body-primary {
   color: var(--clr-brand-primary-110);
 }
@@ -370,9 +375,13 @@ body {
     align-items: baseline;
   }
 
-  .item-name,
-  .item-number {
-    padding: 0 10px;
+  .item-name {
+    .item-image {
+      margin-inline: 5px;
+    }
+
+    
+    // padding: 10px;
   }
 
   .item-dashes {
