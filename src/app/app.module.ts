@@ -20,6 +20,11 @@ import { TopSportsComponent } from './dashboard/bookings/top-sports/top-sports.c
 import { TopSportsPlacesComponent } from './dashboard/bookings/top-sports-places/top-sports-places.component';
 import { TopProsComponent } from './dashboard/bookings/top-pros/top-pros.component';
 import { BookingsOverPeriodsComponent } from './dashboard/bookings/bookings-over-periods/bookings-over-periods.component';
+import { FinancesComponent } from './dashboard/finances/finances.component';
+import { TopIncomeComponent } from './dashboard/finances/top-income/top-income.component';
+import { RevenueAndExpencesComponent } from './dashboard/finances/revenue-and-expences/revenue-and-expences.component';
+import { DonationsComponent } from './dashboard/finances/donations/donations.component';
+import { CashflowComponent } from './dashboard/finances/cashflow/cashflow.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { BookingsOverPeriodsComponent } from './dashboard/bookings/bookings-over
     TopSportsComponent,
     TopSportsPlacesComponent,
     TopProsComponent,
-    BookingsOverPeriodsComponent
+    BookingsOverPeriodsComponent,
+    FinancesComponent,
+    TopIncomeComponent,
+    RevenueAndExpencesComponent,
+    DonationsComponent,
+    CashflowComponent
   ],
   imports: [
     BrowserModule,
