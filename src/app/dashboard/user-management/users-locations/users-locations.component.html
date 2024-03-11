@@ -1,6 +1,27 @@
-<p>users-locations works!</p>
+<div class="container">
+  <div class="details">
+    <h5 class="heading-h4">
+      Users Locations
+    </h5>
+    <span class="paragraph-body-regular-light">
+      geo-presentation
+    </span>
+    <div class="table-wrapper">
+      <div class="dash-separated-table | flex  f-gap f-column " style="--gap-spacer: 15px">
+        <div *ngFor="let item of items" class="item-row">
+          <span class="item-name | paragraph-body">
+            <div class="color-circle" [style.background-color]="item.color"></div>
+            <span>{{ item.name }}</span></span>
+          <span class="item-dashes"></span>
+          <span class="item-number | paragraph-body">{{ item.amount }}K</span>
+        </div>
+      </div>
+    </div>
 
-<!-- <ag-charts-angular
-    style="height: 100%;"
-    [options]="options"
-  ></ag-charts-angular>  -->
+  </div>
+  <div class="map-wrapper">
+    <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions" [constructorType]="chartConstructor"
+      style="width: 320px; height: 344px; display: block;">
+    </highcharts-chart>
+  </div>
+</div>

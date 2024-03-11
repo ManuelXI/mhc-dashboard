@@ -1,0 +1,45 @@
+:host {
+  padding: 0 !important;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  .details {
+    padding: 30px;
+
+    .heading-h4 {
+      text-wrap: nowrap;
+    }
+  }
+
+  .map-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #fafaff;
+  }
+
+  .table-wrapper {
+    margin-top: 25px;
+  }
+
+  .item-row {
+    .paragraph-body {
+      text-wrap: nowrap;
+    }
+    .item-dashes {
+      min-width: 40px;
+    }
+
+    .color-circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+}

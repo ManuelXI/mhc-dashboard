@@ -1,78 +1,70 @@
 import { Component } from '@angular/core';
-import { AgChartsAngular } from 'ag-charts-angular';
-import {
-  AgBarSeriesOptions,
-  AgChartOptions,
-  AgCharts,
-  AgLineSeriesOptions,
-  AgCategoryAxisOptions,
-  AgNumberAxisOptions,
-  AgChartLegendOptions,
-} from 'ag-charts-community';
-
+import Highcharts from 'highcharts/highmaps';
+import mapOfGhana from '../../../../assets/dashboard/User Locations/gh-all.geo.json';
+import { TableData } from '../../../models/types.type';
 @Component({
   selector: 'app-users-locations',
   templateUrl: './users-locations.component.html',
-  styleUrl: './users-locations.component.scss'
+  styleUrl: './users-locations.component.scss',
 })
 export class UsersLocationsComponent {
-  public options;
-
-  constructor() {
-    this.options = {
-      title: { text: 'Ice Cream Sales' },
-      subtitle: { text: 'Data from 2022' },
-      legend: {
-        position: 'right',
-      } as AgChartLegendOptions,
-      // Data: Data to be displayed in the chart
-      data: [
-        { month: 'Jan', avgTemp: 2.3, iceCreamSales: 162000 },
-        { month: 'Mar', avgTemp: 6.3, iceCreamSales: 302000 },
-        { month: 'May', avgTemp: 16.2, iceCreamSales: 800000 },
-        { month: 'Jul', avgTemp: 22.8, iceCreamSales: 1254000 },
-        { month: 'Sep', avgTemp: 14.5, iceCreamSales: 950000 },
-        { month: 'Nov', avgTemp: 8.9, iceCreamSales: 200000 },
-      ],
-      // Series: Defines which chart type and data to use
-      series: [
-        {
-          type: 'bar',
-          xKey: 'month',
-          yKey: 'iceCreamSales',
-        } as AgBarSeriesOptions,
-        { type: 'line', xKey: 'month', yKey: 'avgTemp' } as AgLineSeriesOptions,
-      ],
-      axes: [
-        // Display category (xKey) as the bottom axis
-        {
-          type: 'category',
-          position: 'bottom',
-        } as AgCategoryAxisOptions,
-        // Use left axis for 'iceCreamSales' series
-        {
-          type: 'number',
-          position: 'left',
-          keys: ['iceCreamSales'],
-          label: {
-            formatter: (params) => {
-              return parseFloat(params.value).toLocaleString();
-            },
+  items: TableData[] = [
+    { name: 'Kumasi', amount: 600, color: '#014775' },
+    { name: 'Accra', amount: 200, color: '#0064A7' },
+    { name: 'Tamale', amount: 200, color: '#0085C8' },
+    { name: 'Secondi Takoradi', amount: 180, color: '#00ACE9' },
+    { name: 'Ho', amount: 120, color: '#33BDED' },
+  ];
+  chartConstructor = 'mapChart';
+  highcharts = Highcharts;
+  chartOptions: Highcharts.Options = {
+    chart: {
+      map: mapOfGhana,
+      backgroundColor: '#FAFAFF',
+    },
+    title: {
+      text: undefined,
+    },
+    mapNavigation: {
+      enabled: false,
+    },
+    plotOptions: {
+      map: {},
+    },
+    colorAxis: {
+      min: 0,
+    },
+    series: [
+      {
+        type: 'map',
+        name: 'Map of Ghana',
+        states: {
+          hover: {
+            color: '#D74090',
           },
-        } as AgNumberAxisOptions,
-        // Use right axis for 'avgTemp' series
-        {
-          type: 'number',
-          position: 'right',
-          keys: ['avgTemp'],
-          label: {
-            formatter: (params) => {
-              return params.value + ' °C';
-            },
-          },
-        } as AgNumberAxisOptions,
-      ],
-    };
-  }
+        },
+        dataLabels: {
+          enabled: true,
+          format: '{point.name}',
+        },
+        data: [
+          ['gh-ah', 10],
+          ['gh-ep', 11],
+          ['gh-wp', 12],
+          ['gh-aa', 13],
+          ['gh-tv', 14],
+          ['gh-np', 15],
+          ['gh-ue', 16],
+          ['gh-uw', 17],
+          ['gh-ba', 18],
+          ['gh-cp', 19],
+        ],
+      },
+    ],
+    credits: {
+      enabled: false,
+    },
+  };
 
+  constructor() {}
 }

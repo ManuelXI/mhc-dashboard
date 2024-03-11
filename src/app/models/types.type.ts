@@ -28,6 +28,7 @@ export interface TableData {
   name: string;
   amount: number;
   imageUrl?: string;
+  color?: string;
 }
 export interface Revenue {
   type: 'Revenue' | 'Expences';
