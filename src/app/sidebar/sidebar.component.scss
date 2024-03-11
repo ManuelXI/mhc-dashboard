@@ -7,6 +7,9 @@
   box-shadow: var(--side-panel-drop-shadow);
   position: relative;
   display: grid;
+  ::-webkit-scrollbar-track {
+    background-color: var(--clr-brand-secondary);
+  }
 
   .logo-wrapper {
     padding-inline: var(--padding-inline);

@@ -189,10 +189,12 @@ body {
   width: 4px;
   border-radius: 4px;
   position: fixed;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--clr-brand-secondary-30);
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -396,7 +398,6 @@ body {
 }
 
 .dash-separated-table {
-  //   display: flex;
   overflow-y: auto;
   .item-row {
     display: flex;
@@ -407,8 +408,6 @@ body {
     .item-image {
       margin-inline: 5px;
     }
-
-    // padding: 10px;
   }
 
   .item-dashes {
