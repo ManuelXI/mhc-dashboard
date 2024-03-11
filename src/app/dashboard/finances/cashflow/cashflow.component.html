@@ -1,17 +1,17 @@
 <div class="header flex f-space-between f-align-center mb-5">
-    <h5 class="heading-h4">
-        Cashflow
-        <!-- TODO: Add Filter -->
-    </h5>
-    <span>
-       <!-- TODO: Add Filter -->
-    </span>
- 
- </div>
- <div>
-    <highcharts-chart
-       [Highcharts] = "highcharts" 
-       [options] = "chartOptions" 
-       style = "width: 100%; height: 230px; display: block;">
-    </highcharts-chart>
- </div>
+   <span class="flex f-gap f-align-center">
+      <h5 class="heading-h4">
+         Cashflow
+      </h5>
+      <app-text-filter [filterOptions]="filterOptions"></app-text-filter>
+   </span>
+   <span>
+      <!-- TODO: Add Filter -->
+   </span>
+
+</div>
+<div>
+   <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions"
+      style="width: 100%; height: 230px; display: block;">
+   </highcharts-chart>
+</div>

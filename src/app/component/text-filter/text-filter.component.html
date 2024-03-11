@@ -1,0 +1,20 @@
+<div class="custom-dropdown" [ngClass]="{'with-background': filterOptions.background}">
+    <div class="dropdown-header paragraph-body-regular-light" (click)="toggleDropdown()">
+        <span>{{ selectedValue ? selectedValue : filterOptions.options[0].text }}</span>
+        <span [ngClass]="{
+            'y-flip': dropdownVisible,
+            'icon-wrapper': true
+        }">
+            <img src="assets/icons/dropdown.svg" alt="Dropdown Icon">
+        </span>
+    </div>
+    <ul *ngIf="dropdownVisible"
+    [ngClass]="{
+        'right-orientation': filterOptions.orientation === 'right',
+        'dropdown-options': true
+    }"
+    >
+        <li class="" *ngFor="let option of filterOptions.options" (click)="selectOption(option)">{{ option.text }}
+        </li>
+    </ul>
+</div>

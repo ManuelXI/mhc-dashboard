@@ -8,10 +8,7 @@
         <span class="paragraph-body-regular-light">
             Sport Places
         </span>
-        <span class="paragraph-body-regular-light">
-            <!-- //TODO Add Filter -->
-            Entities
-        </span>
+        <app-text-filter [filterOptions]="filterOptions"></app-text-filter>
     </div>
     <div class="dash-separated-table | flex  f-gap f-column "  style="--gap-spacer: 18px">
         <div *ngFor="let item of items; index as i" class="item-row">

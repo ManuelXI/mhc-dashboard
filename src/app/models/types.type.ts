@@ -36,3 +36,13 @@ export interface Revenue {
   lastMonthAMount: number;
   thisMonthAMount: number;
 }
+export interface TextFilterOptions {
+  background: boolean;
+  options: Option[];
+  orientation?: 'right' | 'left';
+}
+
+export interface Option {
+  text: string;
+  value: string;
+}

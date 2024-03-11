@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import Highcharts from 'highcharts';
+import { TextFilterOptions } from '../../../models/types.type';
 
 @Component({
   selector: 'app-cashflow',
@@ -8,6 +9,16 @@ import Highcharts from 'highcharts';
 })
 export class CashflowComponent {
   highcharts = Highcharts;
+  filterOptions: TextFilterOptions = {
+    background: false,
+    options: [
+      { text: 'Revenue', value: 'Revenue' },
+      { text: 'Commissions', value: 'Commissions' },
+      { text: 'Taxes', value: 'Taxes' },
+      { text: 'Net Profit', value: 'Net Profit' },
+      { text: 'NGO Deductions', value: 'NGO Deductions' },
+    ],
+  };
   chartOptions: Highcharts.Options = {
     chart: {
       type: 'line',

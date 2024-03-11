@@ -8,13 +8,11 @@
 </div>
 <div class="table-wrapper">
     <div class="table-header | flex f-space-between f-align-center mb-20">
-        <span class="paragraph-body-regular-light">
-            <!-- //TODO Add Filter -->
-            Nutrition Specialists
+        <span>
+            <app-text-filter [filterOptions]="filterOptionsForSpecialists"></app-text-filter>
         </span>
-        <span class="paragraph-body-regular-light">
-            <!-- //TODO Add Filter -->
-            Bookings
+        <span>
+            <app-text-filter [filterOptions]="filterOptions"></app-text-filter>
         </span>
     </div>
     <div class="dash-separated-table | flex  f-gap f-column"  style="--gap-spacer: 15px">

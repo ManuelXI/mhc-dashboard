@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TableData } from '../../../models/types.type';
+import { TableData, TextFilterOptions } from '../../../models/types.type';
 
 @Component({
   selector: 'app-top-sports-places',
@@ -14,4 +14,13 @@ export class TopSportsPlacesComponent {
     { name: 'YoGa House', amount: 374 },
     { name: 'Wellness Gym', amount: 294 }
   ];  
+  filterOptions: TextFilterOptions = {
+    background: false,
+    orientation: 'right',
+    options: [
+      { text: 'Entities', value: 'Entities' },
+      { text: 'Bookings', value: 'Bookings' },
+      { text: 'Income', value: 'Income' },
+    ],
+  };
 }

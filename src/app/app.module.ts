@@ -28,6 +28,7 @@ import { CashflowComponent } from './dashboard/finances/cashflow/cashflow.compon
 import { TrafficComponent } from './dashboard/traffic/traffic.component';
 import { TrafficChartComponent } from './dashboard/traffic/traffic-chart/traffic-chart.component';
 import { ActiveVisitorsComponent } from './dashboard/traffic/active-visitors/active-visitors.component';
+import { TextFilterComponent } from './component/text-filter/text-filter.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ActiveVisitorsComponent } from './dashboard/traffic/active-visitors/act
     CashflowComponent,
     TrafficComponent,
     TrafficChartComponent,
-    ActiveVisitorsComponent
+    ActiveVisitorsComponent,
+    TextFilterComponent
   ],
   imports: [
     BrowserModule,

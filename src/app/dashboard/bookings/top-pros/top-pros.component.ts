@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TableData } from '../../../models/types.type';
+import { TableData, TextFilterOptions } from '../../../models/types.type';
 
 @Component({
   selector: 'app-top-pros',
@@ -7,6 +7,21 @@ import { TableData } from '../../../models/types.type';
   styleUrl: './top-pros.component.scss',
 })
 export class TopProsComponent {
+  filterOptionsForSpecialists: TextFilterOptions = {
+    background: false,
+    options: [
+      { text: 'Nutrition Specialists', value: 'Nutrition Specialists' },
+    ],
+  };
+  filterOptions: TextFilterOptions = {
+    background: false,
+    orientation: 'right',
+    options: [
+      { text: 'Entities', value: 'Entities' },
+      { text: 'Bookings', value: 'Bookings' },
+      { text: 'Income', value: 'Income' },
+    ],
+  };
   items: TableData[] = [
     {
       name: 'Raymond Richards',

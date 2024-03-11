@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TableData } from '../../../models/types.type';
+import { TableData, TextFilterOptions } from '../../../models/types.type';
 
 @Component({
   selector: 'app-top-income',
@@ -7,6 +7,16 @@ import { TableData } from '../../../models/types.type';
   styleUrl: './top-income.component.scss'
 })
 export class TopIncomeComponent {
+  filterOptions: TextFilterOptions = {
+    background: false,
+    options: [
+      { text: 'Professionals', value: 'Professionals' },
+      { text: 'Programs', value: 'Programs' },
+      { text: 'Events', value: 'Events' },
+      { text: 'Classes', value: 'Classes' },
+      { text: 'Sport Places', value: 'Sport Places' },
+    ],
+  };
   items: TableData[] = [
     {
       name: 'Ava Greendale',
