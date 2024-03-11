@@ -3,11 +3,9 @@
     --padding-right: 40px;
     --padding-top: 32px;
     --padding-left: 45px;
-    // display: block;
     width: calc(var(--width) + var(--padding-right));
     height: 100%;
     overflow-y: auto;
-    outline: 1px solid saddlebrown;
     padding-right: var(--padding-right);
     padding-top: var(--padding-top);
     padding-bottom: var(--padding-top);
