@@ -87,7 +87,6 @@
   .footer-nav-links {
     border-top: 1px solid var(--clr-brand-secondary-30);
     padding-top: 10px;
-    padding-bottom: 20px;
 
     .notification-bell {
       position: relative;
@@ -119,6 +118,7 @@
         display: flex;
         gap: 6px;
         align-items: center;
+        margin-right: 20px;
 
         .user-details {
           display: flex;
